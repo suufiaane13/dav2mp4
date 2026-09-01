@@ -30,8 +30,19 @@ jobs:
           copy ffmpeg_extract\ffmpeg-master-latest-win64-gpl\bin\ffmpeg.exe bin\
           copy ffmpeg_extract\ffmpeg-master-latest-win64-gpl\bin\ffprobe.exe bin\
 
+      - name: Verify files
+        run: |
+          python -c "import PyInstaller; print('PyInstaller:', PyInstaller.__version__)"
+          dir bin
+          dir app_icon.ico
+
       - name: Build exe
-        run: py -m PyInstaller --clean -y dav_converter.spec
+        run: python -m PyInstaller --clean -y dav_converter.spec
+
+      - name: Verify build
+        run: |
+          dir dist\DAV_Converter
+          dir dist\DAV_Converter\_internal\bin
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
