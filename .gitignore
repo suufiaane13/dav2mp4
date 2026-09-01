@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# PyInstaller
+build/
+dist/
+
+# Binaries (trop volumineux pour Git)
+bin/ffmpeg.exe
+bin/ffprobe.exe
+
+# F temporaires
+*.part.mp4
+*.temp
+*.tmp
+
+# Logs
+logs/
+
+# Test files
+*.dav
+*.mp4
+*.mp4.part.mp4
+test.*
+tesst.*
+fghh.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
