@@ -61,4 +61,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload "${{ github.event.release.tag_name }}" "dist/DAV_Converter/DAV_Converter.exe" --clobber
+          Compress-Archive -Path "dist\DAV_Converter\*" -DestinationPath "dist\DAV_Converter.zip" -Force
+          gh release upload "${{ github.event.release.tag_name }}" "dist/DAV_Converter.zip" --clobber
