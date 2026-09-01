@@ -63,3 +63,4 @@ jobs:
         run: |
           Compress-Archive -Path "dist\DAV_Converter\*" -DestinationPath "dist\DAV_Converter.zip" -Force
           gh release upload "${{ github.event.release.tag_name }}" "dist/DAV_Converter.zip" --clobber
+        shell: pwsh
